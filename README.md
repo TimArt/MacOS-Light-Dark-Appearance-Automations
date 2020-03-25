@@ -1,4 +1,4 @@
-# MacOS-Light Dark Appearance Automations
+# MacOS Light Dark Appearance Automations
 
 This is an AppleScript file for toggling Light/Dark Appearance of MacOS with additional automation changes to the desktop background, Google Chrome's Dark Reader Extension, etc. The script can be used as a MacOS System Service and triggered via a custom keyboard command.
 
