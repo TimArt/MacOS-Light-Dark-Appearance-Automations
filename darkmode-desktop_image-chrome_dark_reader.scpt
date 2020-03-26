@@ -3,11 +3,11 @@ tell application "System Events"
 	(* Set system dark/light mode & save status *)
 	tell appearance preferences
 		set dark mode to not dark mode
-		
+        (* Save dark mode status as variable for later *)		
 		set darkBool to dark mode
 	end tell
 	
-	(* Set desktop photo *)
+	(* Set desktop photo depending on light or dark mode *)
 	if darkBool is true then
 		tell every desktop
 			set picture to "/Users/timarterbury/Pictures/Wallpapers/MoveMIDI Neon Dark.png"
