@@ -44,17 +44,19 @@ do shell script "sed -iE 's/\\(.*\"color_scheme\": \"\\).*\\(\",\\)/\\1" & subli
 -- Toggle iTerm2 profile to new tab
 -- From what I can tell, it is not possible to change the current profile of
 -- a tab, so we must make a new tab.
-tell application "iTerm"
-    repeat with aWindow in windows
-        tell aWindow
-            if darkBool is true then
-                create tab with profile "Tim-Dark"
-            else
-                create tab with profile "Tim-Light"
-            end if
-        end tell
-    end repeat
-end tell
+if application "iTerm" is running then
+    tell application "iTerm"
+        repeat with aWindow in windows
+            tell aWindow
+                if darkBool is true then
+                    create tab with profile "Tim-Dark"
+                else
+                    create tab with profile "Tim-Light"
+                end if
+            end tell
+        end repeat
+    end tell
+end if
 
 
 -- Toggle Dark Reader extension in web browser
