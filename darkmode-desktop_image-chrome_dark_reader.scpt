@@ -25,6 +25,22 @@ tell application "System Events"
 
 end tell
 
+
+-- Toggle Sublime Text theme
+set sublimeTextPreferenceFilePath to "/Users/timarterbury/Library/Application\\ Support/Sublime\\ Text\\ 3/Packages/User/Preferences.sublime-settings"
+
+if darkBool is true then
+    set sublimeTheme to "ayu-mirage.sublime-theme"
+    set sublimeColorScheme to "Packages\\/ayu\\/ayu-mirage.sublime-color-scheme"
+else
+    set sublimeTheme to "ayu-light.sublime-theme"
+    set sublimeColorScheme to "Packages\\/ayu\\/ayu-light.sublime-color-scheme"
+end if
+
+do shell script "sed -iE 's/\\(.*\"theme\": \"\\).*\\(\",\\)/\\1" & sublimeTheme & "\\2/g' " & sublimeTextPreferenceFilePath
+do shell script "sed -iE 's/\\(.*\"color_scheme\": \"\\).*\\(\",\\)/\\1" & sublimeColorScheme & "\\2/g' " & sublimeTextPreferenceFilePath
+
+
 -- Toggle Dark Reader extension in web browser
 set browserName to "Google Chrome"
 if application browserName is running then
