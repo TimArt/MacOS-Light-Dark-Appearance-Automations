@@ -3,6 +3,8 @@
 This is an AppleScript file for toggling Light/Dark Appearance of MacOS with additional automations to toggle:
 - Desktop background
 - Google Chrome's Dark Reader extension
+- Sublime Text theme
+- iTerm2 profile
 
 This script can be tailored to how you want Light/Dark Appearance to affect other OS preferences and applications.
 
@@ -20,3 +22,6 @@ The script can be used as a MacOS System Service and triggered via a custom keyb
 9. Go to System Preferences -> Keyboard -> Shortcuts tab -> Services pane -> Scroll down to the General heading and unfold to reveal all System Services you have in the folder `~/Library/Services`
 10. Enable the checkbox next to the name of your worflow service.
 11. Click into the Add Shortcut box and perform your key command to map it.
+
+### System Permissions
+When you first use your newly mapped keyboard command while viewing using other applications, these applications actally run your AppleScript command on your behalf. Because of this, these applicaitons sometimes require accessibility permissions to be able to make virtual keystrokes for changing of settings such as the Dark Reader extension. You may be prompted to give permissions in a popup.
